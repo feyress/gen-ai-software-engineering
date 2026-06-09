@@ -1,0 +1,68 @@
+### Banking Transactions API — sample requests
+### Open in VS Code with the "REST Client" extension and click "Send Request".
+@baseUrl = http://localhost:3000
+
+### Create a transfer (201)
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "toAccount": "ACC-67890",
+  "amount": 100.50,
+  "currency": "USD",
+  "type": "transfer"
+}
+
+### Create a deposit (201) — no fromAccount needed
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "toAccount": "ACC-12345",
+  "amount": 500,
+  "currency": "USD",
+  "type": "deposit"
+}
+
+### Validation error: negative amount + bad currency (400)
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "toAccount": "ACC-67890",
+  "amount": -5,
+  "currency": "ZZZ",
+  "type": "transfer"
+}
+
+### Currency mismatch on an existing account (400)
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "toAccount": "ACC-67890",
+  "amount": 10,
+  "currency": "EUR",
+  "type": "transfer"
+}
+
+### List all transactions (200)
+GET {{baseUrl}}/transactions
+
+### Filter: by account + type (200)
+GET {{baseUrl}}/transactions?accountId=ACC-12345&type=transfer
+
+### Filter: by date range (200)
+GET {{baseUrl}}/transactions?from=2024-01-01&to=2030-12-31
+
+### Get a transaction by id (200 / 404) — replace <id> with a real id from the list
+GET {{baseUrl}}/transactions/<id>
+
+### Account balance (200)
+GET {{baseUrl}}/accounts/ACC-12345/balance
+
+### Account summary (200)
+GET {{baseUrl}}/accounts/ACC-12345/summary
