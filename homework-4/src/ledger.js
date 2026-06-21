@@ -5,10 +5,6 @@
  *
  * A transaction is a plain object:
  *   { id, date: 'YYYY-MM-DD', type: 'credit' | 'debit', amount: number, category: string }
- *
- * NOTE: This module is the subject of the homework-4 agent pipeline. It ships
- * with intentionally seeded defects (see context/bugs/001/bug-context.md) that
- * the pipeline is expected to research, fix, security-review and test.
  */
 
 /**
@@ -36,9 +32,11 @@ function addTransaction(ledger, tx) {
 function getBalance(ledger) {
   let balance = 0;
   for (const tx of ledger) {
-    // BUG 1: debits are added instead of subtracted, so any debit inflates the
-    // balance instead of reducing it.
-    balance += tx.amount;
+    if (tx.type === 'debit') {
+      balance -= tx.amount;
+    } else {
+      balance += tx.amount;
+    }
   }
   return balance;
 }
@@ -62,9 +60,7 @@ function filterByType(ledger, type) {
  * @returns {Array}
  */
 function getTransactionsInRange(ledger, start, end) {
-  // BUG 2: strict comparisons exclude transactions that fall exactly on the
-  // start or end boundary, even though the range is documented as inclusive.
-  return ledger.filter((tx) => tx.date > start && tx.date < end);
+  return ledger.filter((tx) => tx.date >= start && tx.date <= end);
 }
 
 /**

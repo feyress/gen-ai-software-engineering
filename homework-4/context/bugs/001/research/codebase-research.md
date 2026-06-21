@@ -6,7 +6,7 @@
 
 ## Claim R1 — Balance ignores debit sign
 
-- **File:line:** `src/ledger.js:41`
+- **File:line:** `src/ledger.js:35`
 - **Function:** `getBalance`
 - **Observed code:**
   ```js
@@ -19,7 +19,7 @@
 
 ## Claim R2 — Inclusive range uses strict comparisons
 
-- **File:line:** `src/ledger.js:65`
+- **File:line:** `src/ledger.js:59`
 - **Function:** `getTransactionsInRange`
 - **Observed code:**
   ```js
@@ -32,7 +32,7 @@
 
 ## Claim R3 — Report export is shell-built (noted, out of fix scope)
 
-- **File:line:** `src/exporter.js:39`
+- **File:line:** `src/exporter.js:32`
 - **Function:** `exportReport`
 - **Observed code:**
   ```js

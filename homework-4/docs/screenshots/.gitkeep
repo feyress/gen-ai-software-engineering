@@ -1,0 +1,5 @@
+Place homework-4 screenshots here (see HOWTORUN.md):
+  1. pipeline-run.png        — npm run pipeline (4 stage banners + COMPLETE)
+  2. fix-applied.png         — git diff src/ledger.js or fix-summary.md
+  3. security-report.png     — CRITICAL/HIGH findings
+  4. tests-passing.png       — npm test after (13/13)

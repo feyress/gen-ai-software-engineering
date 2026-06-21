@@ -58,6 +58,9 @@ build_system_prompt() {
 
 STAGE_NO=0
 
+# Number of attempts per stage (retries transient API errors like "Overloaded").
+MAX_ATTEMPTS="${MAX_ATTEMPTS:-3}"
+
 # run_stage <agent-file> <output-file> <mode: readonly|mutate> <task-prompt>
 run_stage() {
   local agent_file="$1" output="$2" mode="$3" task="$4"
@@ -76,6 +79,14 @@ run_stage() {
   printf '  output: %s\n' "$output"
   echo "=================================================================="
 
+  # Resumability: a completed stage leaves a non-empty output file. Skip it on
+  # re-run (so a mid-pipeline failure can be retried without redoing earlier,
+  # non-idempotent stages like the Bug Fixer). Set FORCE=1 to re-run anyway.
+  if [ -s "$output" ] && [ "${FORCE:-0}" != "1" ]; then
+    echo "--> stage $STAGE_NO SKIPPED: $output already exists (set FORCE=1 to re-run)."
+    return 0
+  fi
+
   local -a args=(
     -p "$task"
     --model "$model"
@@ -88,13 +99,24 @@ run_stage() {
     args+=(--disallowedTools "Edit" "Bash")
   fi
 
-  claude "${args[@]}"
+  local attempt=1 rc=0
+  while [ "$attempt" -le "$MAX_ATTEMPTS" ]; do
+    [ "$attempt" -gt 1 ] && echo "    (retry $attempt/$MAX_ATTEMPTS after transient failure)"
+    set +e
+    claude "${args[@]}"
+    rc=$?
+    set -e
+    if [ "$rc" -eq 0 ] && [ -s "$output" ]; then
+      echo "--> stage $STAGE_NO OK: wrote $output"
+      return 0
+    fi
+    attempt=$((attempt + 1))
+    [ "$attempt" -le "$MAX_ATTEMPTS" ] && sleep $((attempt * 5))
+  done
 
-  if [ ! -f "$output" ]; then
-    echo "ERROR: stage $STAGE_NO produced no output ($output). Stopping." >&2
-    exit 1
-  fi
-  echo "--> stage $STAGE_NO OK: wrote $output"
+  echo "ERROR: stage $STAGE_NO failed after $MAX_ATTEMPTS attempts (exit $rc, output: $output)." >&2
+  echo "       Re-run the pipeline to resume from this stage (earlier stages are skipped)." >&2
+  exit 1
 }
 
 # --- pipeline ----------------------------------------------------------------

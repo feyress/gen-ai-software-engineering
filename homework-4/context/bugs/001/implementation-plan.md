@@ -15,8 +15,6 @@ Subtract debit amounts instead of adding them.
 ```js
   let balance = 0;
   for (const tx of ledger) {
-    // BUG 1: debits are added instead of subtracted, so any debit inflates the
-    // balance instead of reducing it.
     balance += tx.amount;
   }
   return balance;
@@ -43,8 +41,6 @@ Use `>=` / `<=` so boundary dates are included.
 
 **Before:**
 ```js
-  // BUG 2: strict comparisons exclude transactions that fall exactly on the
-  // start or end boundary, even though the range is documented as inclusive.
   return ledger.filter((tx) => tx.date > start && tx.date < end);
 ```
 
