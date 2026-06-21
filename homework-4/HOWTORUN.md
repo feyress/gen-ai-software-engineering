@@ -82,9 +82,12 @@ Then read the four artifacts under `context/bugs/001/` (and `tests/ledger.change
 
 ## Screenshots
 
-Capture these into `docs/screenshots/` for the PR:
+Captured from a real run, in `docs/screenshots/`:
 
-1. `npm run pipeline` — the four stage banners and "PIPELINE COMPLETE".
-2. The applied fix (e.g. `git diff src/ledger.js`) or `fix-summary.md`.
-3. `security-report.md` — the CRITICAL/HIGH findings.
-4. `npm test` after — 13/13 passing.
+| | |
+|---|---|
+| ![Stage 1](docs/screenshots/stage_1.png) | ![Stage 2](docs/screenshots/stage_2.png) |
+| ![Stage 3](docs/screenshots/stage_3.png) | ![Stage 4](docs/screenshots/stage_4.png) |
+
+`stage_1.png` … `stage_4.png` walk through the pipeline run, the applied fix, the security
+report (CRITICAL/HIGH findings), and the passing test suite.
