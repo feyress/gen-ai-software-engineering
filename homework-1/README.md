@@ -1,5 +1,6 @@
 # 🏦 Homework 1: Banking Transactions API
 
+> **Student Name**: Serhii Y.
 > **AI Tools Used**: Claude Code
 
 ---
