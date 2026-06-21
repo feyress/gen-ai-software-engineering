@@ -1,0 +1,6 @@
+customer_id,customer_email,customer_name,subject,description,tags,metadata_source,metadata_device_type
+CUST-9001,not-an-email,Bad Email,Login broken,My password reset link does not work and I am locked out of my account.,login,email,desktop
+,nobody@example.com,Missing Id,Refund request,I was charged twice and would like a refund processed for the duplicate charge.,billing,web_form,mobile
+CUST-9003,short@example.com,Too Short,Hi,too short,login,web_form,desktop
+CUST-9004,ok@example.com,Bad Enum,Account locked out,I cannot access my account and need help resetting two factor authentication now.,login,carrier_pigeon,desktop
+CUST-9005,good@example.com,Valid Row,App keeps crashing on launch,The application crashes with a 500 error and stack trace every single time I open it.,crash,chat,mobile

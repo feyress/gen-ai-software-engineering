@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket>
+    <customer_id>CUST-400</customer_id>
+    <customer_email>judy@example.com</customer_email>
+    <customer_name>Judy Walsh</customer_name>
+    <subject>Refund not processed</subject>
+    <description>My refund from last week has still not appeared on my credit card statement.</description>
+    <tags>
+      <tag>billing</tag>
+      <tag>refund</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-401</customer_id>
+    <customer_email>mallory@example.com</customer_email>
+    <customer_name>Mallory Quinn</customer_name>
+    <subject>Bug: report export is broken</subject>
+    <description>Steps to reproduce: open reports, click export, the page throws an error every time.</description>
+    <metadata>
+      <source>api</source>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+</tickets>
