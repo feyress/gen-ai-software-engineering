@@ -1,0 +1,4 @@
+customer_id,customer_email,customer_name,subject,description,tags,metadata_source,metadata_device_type
+CUST-100,bob@example.com,Bob Jones,Cannot access account,I am locked out and cannot access my account after a password reset.,login|urgent,email,desktop
+CUST-101,carol@example.com,Carol King,Billing question about invoice,I was charged twice on my last invoice and need a refund please.,billing,web_form,mobile
+CUST-102,dan@example.com,Dan Lee,App crashes on startup,The application crashes with an error every time I open it on mobile.,crash,chat,mobile

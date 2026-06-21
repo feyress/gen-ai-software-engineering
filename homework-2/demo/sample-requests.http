@@ -1,0 +1,60 @@
+### Customer Support API — sample requests
+### Open in VS Code with the REST Client extension, or copy the equivalent curl.
+@base = http://localhost:3000
+
+### Create a ticket
+POST {{base}}/tickets
+Content-Type: application/json
+
+{
+  "customer_id": "CUST-001",
+  "customer_email": "alice@example.com",
+  "customer_name": "Alice Smith",
+  "subject": "Cannot log in to my account",
+  "description": "I forgot my password and the 2FA reset email never arrives. I am locked out.",
+  "metadata": { "source": "web_form", "device_type": "desktop" }
+}
+
+### Create a ticket and auto-classify it on creation
+POST {{base}}/tickets?auto_classify=true
+Content-Type: application/json
+
+{
+  "customer_id": "CUST-002",
+  "customer_email": "ivan@example.com",
+  "customer_name": "Ivan Petrov",
+  "subject": "Production down - critical outage",
+  "description": "The whole production system is down and this is a critical outage for us.",
+  "metadata": { "source": "phone", "device_type": "desktop" }
+}
+
+### List all tickets
+GET {{base}}/tickets
+
+### Filter by category and priority
+GET {{base}}/tickets?category=account_access&priority=urgent
+
+### Get one ticket (replace :id)
+GET {{base}}/tickets/REPLACE_WITH_ID
+
+### Update a ticket
+PUT {{base}}/tickets/REPLACE_WITH_ID
+Content-Type: application/json
+
+{ "status": "in_progress", "assigned_to": "agent-1" }
+
+### Auto-classify an existing ticket
+POST {{base}}/tickets/REPLACE_WITH_ID/auto-classify
+
+### Delete a ticket
+DELETE {{base}}/tickets/REPLACE_WITH_ID
+
+### Bulk import — CSV (multipart upload)
+# curl -F file=@demo/sample_tickets.csv http://localhost:3000/tickets/import
+
+### Bulk import — JSON (raw body)
+# curl -X POST "http://localhost:3000/tickets/import?format=json" \
+#   -H "Content-Type: application/json" --data-binary @demo/sample_tickets.json
+
+### Bulk import — XML (multipart upload), auto-classifying each ticket
+# curl -F file=@demo/sample_tickets.xml "http://localhost:3000/tickets/import?auto_classify=true"

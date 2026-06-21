@@ -1,0 +1,4 @@
+customer_id,customer_email,customer_name,subject,description,tags,metadata_source,metadata_device_type
+CUST-200,not-an-email,Eve Adams,Short,too short,login,email,desktop
+,frank@example.com,Frank Moore,Valid subject here,This description is definitely long enough to pass validation checks.,billing,web_form,mobile
+CUST-202,grace@example.com,Grace Hall,Account locked,I cannot access my account and need help resetting two-factor auth now.,login,bogus_source,desktop

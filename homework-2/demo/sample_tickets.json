@@ -1,0 +1,274 @@
+[
+  {
+    "customer_id": "CUST-1000",
+    "customer_email": "robin.garcia0@example.com",
+    "customer_name": "Robin Garcia",
+    "subject": "General feedback",
+    "description": "Just wanted to say thanks to the support team for being so helpful and kind. This is critical and production is down for our whole team.",
+    "tags": [],
+    "metadata": {
+      "source": "email",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "CUST-1001",
+    "customer_email": "sam.wilson1@example.com",
+    "customer_name": "Sam Wilson",
+    "subject": "General feedback",
+    "description": "Just wanted to say thanks to the support team for being so helpful and kind.",
+    "tags": [
+      "login"
+    ],
+    "metadata": {
+      "source": "web_form",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "CUST-1002",
+    "customer_email": "quinn.smith2@example.com",
+    "customer_name": "Quinn Smith",
+    "subject": "Charged twice on my invoice",
+    "description": "My last invoice shows a double charge and I would like a refund for the duplicate payment.",
+    "tags": [
+      "billing",
+      "mobile"
+    ],
+    "metadata": {
+      "source": "chat",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "CUST-1003",
+    "customer_email": "skyler.park3@example.com",
+    "customer_name": "Skyler Park",
+    "subject": "Regression after update",
+    "description": "After the latest update a feature that worked before is now broken; here are reproduction steps.",
+    "tags": [],
+    "metadata": {
+      "source": "email",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "CUST-1004",
+    "customer_email": "jordan.brown4@example.com",
+    "customer_name": "Jordan Brown",
+    "subject": "Defect in CSV export",
+    "description": "There is a defect: the CSV export is broken and produces incorrect results every time.",
+    "tags": [
+      "login"
+    ],
+    "metadata": {
+      "source": "web_form",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "CUST-1005",
+    "customer_email": "quinn.garcia5@example.com",
+    "customer_name": "Quinn Garcia",
+    "subject": "Locked out after password reset",
+    "description": "I reset my password but now cannot access my account at all. Please help.",
+    "tags": [],
+    "metadata": {
+      "source": "chat",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "CUST-1006",
+    "customer_email": "avery.garcia6@example.com",
+    "customer_name": "Avery Garcia",
+    "subject": "Locked out after password reset",
+    "description": "I reset my password but now cannot access my account at all. Please help. This is critical and production is down for our whole team.",
+    "tags": [
+      "mobile",
+      "ui"
+    ],
+    "metadata": {
+      "source": "phone",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "CUST-1007",
+    "customer_email": "drew.brown7@example.com",
+    "customer_name": "Drew Brown",
+    "subject": "General feedback",
+    "description": "Just wanted to say thanks to the support team for being so helpful and kind. This is critical and production is down for our whole team.",
+    "tags": [
+      "login"
+    ],
+    "metadata": {
+      "source": "email",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "CUST-1008",
+    "customer_email": "drew.park8@example.com",
+    "customer_name": "Drew Park",
+    "subject": "Defect in CSV export",
+    "description": "There is a defect: the CSV export is broken and produces incorrect results every time. This is only a minor cosmetic issue, no rush whenever you can.",
+    "tags": [
+      "billing"
+    ],
+    "metadata": {
+      "source": "api",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "CUST-1009",
+    "customer_email": "robin.clark9@example.com",
+    "customer_name": "Robin Clark",
+    "subject": "Refund not received",
+    "description": "I requested a refund last week but nothing has appeared on my credit card yet.",
+    "tags": [
+      "login",
+      "mobile"
+    ],
+    "metadata": {
+      "source": "email",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "CUST-1010",
+    "customer_email": "jamie.davis10@example.com",
+    "customer_name": "Jamie Davis",
+    "subject": "General feedback",
+    "description": "Just wanted to say thanks to the support team for being so helpful and kind. This is blocking our work and is important, please fix asap.",
+    "tags": [
+      "export"
+    ],
+    "metadata": {
+      "source": "phone",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "CUST-1011",
+    "customer_email": "taylor.park11@example.com",
+    "customer_name": "Taylor Park",
+    "subject": "How do I get started",
+    "description": "I am new here and have a general question about how the dashboard layout works. This is critical and production is down for our whole team.",
+    "tags": [],
+    "metadata": {
+      "source": "api",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "CUST-1012",
+    "customer_email": "cameron.wilson12@example.com",
+    "customer_name": "Cameron Wilson",
+    "subject": "App crashes on startup",
+    "description": "The application crashes with a 500 error and a stack trace every time I open it. This is blocking our work and is important, please fix asap.",
+    "tags": [
+      "ui",
+      "billing"
+    ],
+    "metadata": {
+      "source": "chat",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "CUST-1013",
+    "customer_email": "casey.lee13@example.com",
+    "customer_name": "Casey Lee",
+    "subject": "How do I get started",
+    "description": "I am new here and have a general question about how the dashboard layout works. This is blocking our work and is important, please fix asap.",
+    "tags": [],
+    "metadata": {
+      "source": "phone",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "CUST-1014",
+    "customer_email": "riley.wilson14@example.com",
+    "customer_name": "Riley Wilson",
+    "subject": "Export times out",
+    "description": "Whenever I export a report the request times out and the app freezes.",
+    "tags": [
+      "ui"
+    ],
+    "metadata": {
+      "source": "email",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "CUST-1015",
+    "customer_email": "skyler.smith15@example.com",
+    "customer_name": "Skyler Smith",
+    "subject": "Please add CSV import",
+    "description": "Could you add a bulk CSV import feature? This improvement would help our team a lot. This is critical and production is down for our whole team.",
+    "tags": [],
+    "metadata": {
+      "source": "email",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "CUST-1016",
+    "customer_email": "quinn.johnson16@example.com",
+    "customer_name": "Quinn Johnson",
+    "subject": "Refund not received",
+    "description": "I requested a refund last week but nothing has appeared on my credit card yet. This is only a minor cosmetic issue, no rush whenever you can.",
+    "tags": [
+      "urgent"
+    ],
+    "metadata": {
+      "source": "phone",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "CUST-1017",
+    "customer_email": "reese.smith17@example.com",
+    "customer_name": "Reese Smith",
+    "subject": "Please add CSV import",
+    "description": "Could you add a bulk CSV import feature? This improvement would help our team a lot.",
+    "tags": [
+      "export",
+      "login"
+    ],
+    "metadata": {
+      "source": "phone",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "CUST-1018",
+    "customer_email": "casey.davis18@example.com",
+    "customer_name": "Casey Davis",
+    "subject": "How do I get started",
+    "description": "I am new here and have a general question about how the dashboard layout works. This is critical and production is down for our whole team.",
+    "tags": [],
+    "metadata": {
+      "source": "chat",
+      "device_type": "desktop"
+    }
+  },
+  {
+    "customer_id": "CUST-1019",
+    "customer_email": "skyler.lee19@example.com",
+    "customer_name": "Skyler Lee",
+    "subject": "How do I get started",
+    "description": "I am new here and have a general question about how the dashboard layout works.",
+    "tags": [
+      "login",
+      "ui"
+    ],
+    "metadata": {
+      "source": "phone",
+      "device_type": "tablet"
+    }
+  }
+]

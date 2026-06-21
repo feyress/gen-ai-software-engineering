@@ -1,0 +1,19 @@
+[
+  {
+    "customer_id": "CUST-300",
+    "customer_email": "heidi@example.com",
+    "customer_name": "Heidi Park",
+    "subject": "Feature request: dark mode",
+    "description": "It would be nice if you could add a dark mode theme to the dashboard.",
+    "tags": ["feature", "ui"],
+    "metadata": {"source": "web_form", "device_type": "desktop"}
+  },
+  {
+    "customer_id": "CUST-301",
+    "customer_email": "ivan@example.com",
+    "customer_name": "Ivan Petrov",
+    "subject": "Production down - critical outage",
+    "description": "The whole production system is down and this is a critical outage for us.",
+    "metadata": {"source": "phone", "device_type": "desktop"}
+  }
+]
