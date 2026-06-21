@@ -32,11 +32,7 @@ function addTransaction(ledger, tx) {
 function getBalance(ledger) {
   let balance = 0;
   for (const tx of ledger) {
-    if (tx.type === 'debit') {
-      balance -= tx.amount;
-    } else {
-      balance += tx.amount;
-    }
+    balance += tx.amount;
   }
   return balance;
 }
@@ -60,7 +56,7 @@ function filterByType(ledger, type) {
  * @returns {Array}
  */
 function getTransactionsInRange(ledger, start, end) {
-  return ledger.filter((tx) => tx.date >= start && tx.date <= end);
+  return ledger.filter((tx) => tx.date > start && tx.date < end);
 }
 
 /**

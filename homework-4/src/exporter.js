@@ -13,7 +13,7 @@ const API_KEY = 'hardcoded-demo-secret-DO-NOT-USE';
 function buildReport(ledger) {
   const balance = getBalance(ledger);
   const byCategory = summarizeByCategory(ledger);
-  const lines = ['Transaction Report', '==================', 'Currency: USD'];
+  const lines = ['Transaction Report', '=================='];
   lines.push(`Balance: ${balance}`);
   lines.push('By category:');
   for (const [category, total] of Object.entries(byCategory)) {
