@@ -82,12 +82,21 @@ Then read the four artifacts under `context/bugs/001/` (and `tests/ledger.change
 
 ## Screenshots
 
-Captured from a real run, in `docs/screenshots/`:
+Captured from a real run (in `docs/screenshots/`): the pipeline run, the applied fix, the
+security report (CRITICAL/HIGH findings), and the passing test suite.
 
-| | |
-|---|---|
-| ![Stage 1](docs/screenshots/stage_1.png) | ![Stage 2](docs/screenshots/stage_2.png) |
-| ![Stage 3](docs/screenshots/stage_3.png) | ![Stage 4](docs/screenshots/stage_4.png) |
+**Stage 1 — Pipeline run**
 
-`stage_1.png` … `stage_4.png` walk through the pipeline run, the applied fix, the security
-report (CRITICAL/HIGH findings), and the passing test suite.
+![Pipeline run](docs/screenshots/stage_1.png)
+
+**Stage 2 — Applied fix**
+
+![Applied fix](docs/screenshots/stage_2.png)
+
+**Stage 3 — Security report**
+
+![Security report](docs/screenshots/stage_3.png)
+
+**Stage 4 — Tests passing**
+
+![Tests passing](docs/screenshots/stage_4.png)
