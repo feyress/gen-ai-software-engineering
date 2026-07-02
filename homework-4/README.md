@@ -1,6 +1,6 @@
 # Homework 4 — Four-Agent Bug-Fixing Pipeline
 
-**Author:** Serhii
+**Author:** Serhii Yefanov
 
 A self-contained, one-command **agentic pipeline** that researches, fixes, security-reviews
 and tests bugs in a small sample application. Four agents run in order via headless
