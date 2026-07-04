@@ -1,0 +1,13 @@
+{
+  "name": "homework-4-agent-pipeline",
+  "version": "1.0.0",
+  "description": "Sample transaction-ledger app operated on by the homework-4 four-agent bug-fixing pipeline",
+  "author": "Serhii",
+  "license": "MIT",
+  "main": "src/ledger.js",
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node --test tests/*.test.js",
+    "pipeline": "./run-pipeline.sh"
+  }
+}
