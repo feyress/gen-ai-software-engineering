@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# git pre-push hook: refuse the push when test coverage is below the gate.
+#
+# Install from the repository root:
+#   ln -sf ../../homework-6/hooks/pre-push .git/hooks/pre-push
+#
+# Demonstrate the block without weakening the real gate:
+#   COVERAGE_MIN=100 git push --dry-run
+set -uo pipefail
+
+# Located from the repository root rather than from $BASH_SOURCE, because git
+# invokes this through the .git/hooks/pre-push symlink and BASH_SOURCE reports
+# the symlink's own path, which would resolve to .git/ instead of homework-6/.
+REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
+if [ -z "$REPO_ROOT" ]; then
+  echo "coverage-gate: not inside a git work tree, skipping." >&2
+  exit 0
+fi
+
+HOMEWORK_DIR="$REPO_ROOT/homework-6"
+GATE="$HOMEWORK_DIR/scripts/coverage_gate.py"
+
+if [ ! -f "$GATE" ]; then
+  echo "coverage-gate: $GATE not found, skipping." >&2
+  exit 0
+fi
+
+echo "coverage-gate: measuring homework-6 test coverage before push..." >&2
+python3 "$GATE" --from-git
+exit $?

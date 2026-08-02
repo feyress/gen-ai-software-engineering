@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+coverage.json
+htmlcov/
+
+# Pipeline runtime artifacts: the directory layout is tracked, contents are not.
+shared/input/*
+shared/processing/*
+shared/output/*
+shared/results/*
+!shared/*/.gitkeep
+audit-log.jsonl

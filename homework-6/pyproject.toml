@@ -1,0 +1,17 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.coverage.run]
+# `include`, not `source`: coverage's `source` accepts packages and directories
+# only, so the two file-path entries this project needs were silently dropped and
+# the orchestrator and MCP server went unmeasured.
+include = ["agents/*.py", "integrator.py", "mcp/server.py"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+]
